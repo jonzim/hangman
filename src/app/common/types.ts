@@ -12,7 +12,7 @@ export interface WordCharacter {
 
 export interface HangmanWord {
     category: string;
-    word: string
+    word: string;
 }
 
 export interface Letter {
