@@ -46,3 +46,4 @@ testem.log
 Thumbs.db
 package-lock.7z
 package-lock.json
+dist

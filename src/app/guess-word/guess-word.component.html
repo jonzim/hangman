@@ -1,7 +1,7 @@
 <div fxLayout="column" fxLayoutAlign="space-around center">
 
     <img src="assets/win.gif" width="200px;" *ngIf="winFlag"/>
-    <app-image1 height="200px" width="200px"></app-image1>
+    <app-image1 height="200px" width="200px" *ngIf="!winFlag"></app-image1>
 
     <h3>{{ currentWord.category }} </h3>
 
