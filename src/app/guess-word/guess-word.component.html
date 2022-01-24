@@ -1,0 +1,24 @@
+<div fxLayout="column" fxLayoutAlign="space-around center">
+
+    <img src="assets/win.gif" width="200px;" *ngIf="winFlag"/>
+    <img src='assets/hangman-{{misses}}.png' style="height: 200px; width: 200px;" *ngIf="!winFlag"/><br />
+    <app-image1 height="200px" width="200px"></app-image1>
+
+    <h3>{{ currentWord.category }} </h3>
+
+    <div id="word">
+        <div *ngFor='let c of charactersToGuess;' style="display: inline; padding-right: 4px;">
+            <div class="letter" [ngClass]="{'underline': c.isAlphaNumeric===true}"><span
+                    [ngClass]="{'unguessed': c.isGuessed===false}" *ngIf="c.isVisible">{{c.value}}</span><span
+                    *ngIf="!c.isVisible">&nbsp;</span></div>
+        </div>
+    </div>
+
+    <div fxLayoutGap="10px" fxLayout="row wrap">
+        <p *ngFor='let l of guessLetter.letters;'>
+            <button mat-fab color="primary" [disabled]='l.isGuessed === true'
+                (click)="checkLetter(l.value)">{{l.value}}</button>
+        </p>
+    </div>
+
+</div>

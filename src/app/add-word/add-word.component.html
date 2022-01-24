@@ -1,0 +1,5 @@
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Word to guess"  [(ngModel)]="guessWord" (ngModelChange)="onChanges($event)" />
+    </mat-form-field>
+  
+    {{ guessWord | json }}
